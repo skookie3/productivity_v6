@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #1a1a1f;
+  --bg2: #222228;
+  --bg3: #2a2a32;
+  --bg4: #313139;
+  --bg5: #3a3a44;
+  --item-bg: #2c2c35;
+  --item-bg-checked: #313139;
+  --border: rgba(255,255,255,0.08);
+  --border2: rgba(255,255,255,0.13);
+  --text: #ffffff;
+  --text2: rgba(255,255,255,0.65);
+  --text3: rgba(255,255,255,0.35);
+  --accent: #ffffff;
+  --green: #22c55e;
+  --orange: #f97316;
+  --red: #ef4444;
+  --radius: 16px;
+  --radius-sm: 12px;
+  --radius-xs: 8px;
+
+  /* Theme accent — changed by JS */
+  --th: #ffffff;
+  --th-rgb: 255,255,255;
+  --th-dim: rgba(255,255,255,0.12);
+  --th-border: rgba(255,255,255,0.25);
+  --th-glow: rgba(255,255,255,0.08);
+}
+
+html { font-size: 15px; }
+
+body {
+  font-family: 'Inter', var(--font-inter), -apple-system, 'SF Pro Display', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Grain effect */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.5;
+}
